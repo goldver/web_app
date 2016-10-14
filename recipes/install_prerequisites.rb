@@ -18,7 +18,7 @@ npm_ver = "npm@#{node['web_app']['npm_version']}"
 
 execute 'npm_version' do
     command 'sudo npm i -g' " #{npm_ver}"
-    user 'gtdeploy'
+    user 'deploy'
     Chef::Log.info("### Your Npm version is: '#{npm_ver}' ###")
 end
 
