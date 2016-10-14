@@ -12,6 +12,7 @@ Attributes
 | --- | ---- | ----------- | ------- |
 | ['web_app']['current_path'] | String | path to cloned repository | '/var/www/projects/webapp/current' |
 | ['web_app']['release_path'] | String | path to release | 'var/www/projects/webapp/release' |
+| ['web_app']['npm_version'] | String | Npm version | '3.10.7' |
 
 Usage
 ==================
@@ -28,7 +29,15 @@ If you wish to change a current or/and release path, e.g: var/tmp/my_path
 		"current_path": "var/tmp/my_path"
 		}    
 	}
+	
+If you wish to change an Npm version, for example '3.10.8':
 
+	{
+      gettaxi_npm_install: {
+          npm_version: "3.10.8"
+       }   
+	}
+	
 Contributing
 ------------
 1. Fork the repository on Github

@@ -13,6 +13,15 @@ execute 'install_nodejs' do
     user 'deploy'
 end
 
+# Npm specific version
+npm_ver = "npm@#{node['web_app']['npm_version']}"
+
+execute 'npm_version' do
+    command 'sudo npm i -g' " #{npm_ver}"
+    user 'gtdeploy'
+    Chef::Log.info("### Your Npm version is: '#{npm_ver}' ###")
+end
+
 # Installs g++
 bash 'install_g_pp' do
     code <<-EOH
